@@ -1,3 +1,3 @@
-import React from "react";
+import React from 'react'
 
-export const TodolistView = () => <h1>Hola</h1>;
+export const TodolistView = () => <h1>Hola</h1>
