@@ -1,5 +1,6 @@
 import { timestamp } from '../../utils/timestamp'
 import { uuid } from '../../utils/uuid'
+import { Reducer } from 'redux'
 
 export type Todo = {
   id: string
@@ -64,10 +65,10 @@ const removeTodo = (
   }
 }
 
-export const reducer = (
-  prevState: TodosState,
+export const reducer: Reducer<TodosState, TodosAction> = (
+  prevState: TodosState = initialState,
   action: TodosAction
-) => {
+): TodosState => {
   switch (action.type) {
     case 'todo:add':
       return addTodo(prevState, action)
